@@ -1,0 +1,16 @@
+
+<div *ngIf="product">
+    <!-- <p>{{product|json}}</p> -->
+
+  <h1>Edit Product {{product.title}}</h1>
+    <p *ngIf="error">{{error}}</p>
+    <form>
+      <p>Name <input type="text" [(ngModel)]="product.name" name="product.name" [value]="product.name"></p>
+      <p>Quantity <input type="text" [(ngModel)]="product.qty" name="product.qty" [value]="product.qty"></p>
+      <p>Price <input type="text" [(ngModel)]="product.price" name="product.price" [value]="product.price"></p>
+      <button><input type="submit" (click)="updateProduct()" value="Update"></button>
+      <button><input type="submit" (click)="deleteProduct()" value="Delete"></button>
+      <p></p>
+    </form>
+    
+</div>

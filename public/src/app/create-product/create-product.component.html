@@ -1,0 +1,11 @@
+<h1>New Product</h1>
+<!-- <p>{{product|json}}</p> -->
+<p *ngIf="error.length > 0">{{error}}</p>
+<form>
+  <p>Name <input type="text" [(ngModel)]="product.name" name="product.name"></p>
+  <p>Quantity <input type="text" [(ngModel)]="product.qty" name="product.qty"></p>
+  <p>Price <input type="text" [(ngModel)]="product.price" name="product.price"></p>
+  <button><input type="submit" (click)="createProduct()" value="Create"></button>
+  <button><a href="/products">Cancel</a></button>
+  <p></p>
+</form>

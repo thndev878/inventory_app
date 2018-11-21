@@ -1,0 +1,45 @@
+<h1>Products List</h1>
+
+<a href="/products/new"><button>Add a New Product</button></a>
+<p></p>
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Qty</th>
+    <th>Price</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let product of allProducts">
+    <td>{{product._id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.qty}}</td>
+    <td>$ {{product.price}}</td>
+    <td>
+      <a href="/products/edit/{{product._id}}"><button>Edit</button></a>
+      <!-- <button (click)="deleteProduct(product._id)">Delete</button> -->
+      
+      <a href="/products/{{product._id}}"><button>Details</button></a>
+    </td>
+  </tr>
+</table>
